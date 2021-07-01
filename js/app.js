@@ -128,10 +128,13 @@ function solve(){
         case '/':
             if(operating2 == 0)
                 res = "Math error";
-            else {
-                res = operating1 / operating2;
-                break;
-            } 
-    }
+            else if(operating1 % operating2 == 0)
+                    res = operating1 / operating2;
+                else {
+                    res = operating1 / operating2;
+                    res = res.toFixed(10);
+                }
+            break;
+        } 
     result.textContent = res;
 }
